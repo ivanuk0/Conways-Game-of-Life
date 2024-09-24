@@ -1,1 +1,51 @@
-a
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="conway.css" />
+</head>
+<body>
+    <div id="introduction-container">
+        <div id="convas"></div>
+        <div id="introduction" style="opacity:0;">Conway's game of life</div>
+        <p id="introduction2" style="opacity:0;">Originally by John Horton Conway<small>(1970)</small><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recreated &nbsp;&nbsp;&nbsp;&nbsp;by &nbsp;&nbsp;&nbsp;<span style="text-decoration: underline;">Ivan Kriachko</span></p>
+    </div>
+    <div id="hide"> <!--NEITHER FINISHED NOR TOUCHED-->
+        <div class="buttons">
+            <button onclick="start(), yes_was(true)" class="start">Start</button>
+            <button onclick="start_click()" class="start_click">Next</button>
+            <button onclick="" id="reset">Reset</button>
+            <button onclick="stop_interval(), yes_was(false)" class="stop">Stop</button>
+            <button onclick="random_paint()">Lucky</button>
+            <select id="density" size="1" style="position: relative;left:0;">
+                <option value="50%">50%</option>
+                <option value="33%">33%</option>
+                <option value="25%">25%</option>
+                <option value="20%">20%</option>
+                <option value="16%">16%</option>
+            </select>
+        </div>
+        <button id="intro" style="position:fixed;z-index:1;top:5px;right:2px;">Intro</button>
+        <div id="menu">
+            <select id="theme" size="1">
+                <option>light</option>
+                <option>dark</option>
+            </select>
+        </div>
+        <p id="counter">generation: 0</p>
+        <div id="range-div">
+            <input type="range" id="rangeInput" min="10" max="1000" value="100" step="1">
+            <span id="rangeValue">100</span>
+            <span id="rangeValue"><br>Speed updates after<br>stop -> start</span>
+        </div>
+        <div id="container-size-input">
+            <label id="label-size">size</label>
+            <input id="size-input" placeholder="50"/>
+        </div>
+        <div id="block-container"></div>
+    </div>
+    <script src="conway.js"></script>
+</body>
+</html>

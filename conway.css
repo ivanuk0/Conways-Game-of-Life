@@ -1,1 +1,223 @@
-a
+
+:root {
+    --gap: 3px;
+    --background-color: white;
+    --block-color: #2e2b2b;
+}
+
+body,html {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+}
+
+#block-container {
+    display: grid;
+    position: absolute;
+    /*left:0;*/
+    left: 50%;
+    transform: translateX(-50%);
+    gap: var(--gap);
+}
+
+div[class^="block"] {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--block-color);
+    cursor: pointer;
+    opacity: 1;
+}
+
+div[class^="block"]:hover {
+    background-color: #425f6b;
+}
+
+.buttons {
+    position: fixed;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    right: 60%;
+    transform: translateX(-50%);
+    top: 5px;
+    gap:5px; /*the buttons' height is about 47px*/
+    max-width: 0%;
+    z-index: 1;
+    cursor: grab;
+}
+
+.buttons select {
+    font-size: 10px;
+}
+
+#counter {
+    position: fixed;
+    top:12px;
+    z-index: 1;
+    right:3px;
+}
+
+#menu select {
+    z-index: 1;
+    position: fixed;
+    color: var(--background-color);
+    background-color: var(--block-color);
+}
+
+#container-size-input {
+    position: fixed;
+    display: grid;
+    z-index: 1;
+    left: 5px;
+    top: 76px;
+}
+
+#size-input {
+    position: relative;
+    width: 24px;
+}
+
+#range-div {
+    display: grid;
+    position: fixed;
+    left: 70px;
+    z-index: 1;
+    gap: 5px;
+}
+
+#rangeValue {
+    color: rgb(44, 130, 18);
+}
+
+#introduction {
+    position: absolute;
+    left: 43%;
+}
+
+#introduction2 {
+    position: absolute;
+    color: #dedede;
+    top:42%;
+    left:30%;
+}
+
+#hide {
+    display: block;
+}
+
+#convas {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#introduction2.an {
+    animation: 8s introduce2 ease both;
+}
+
+#introduction.an {
+    animation: 8s introduce ease both;
+}
+
+#introduction-container.an {
+    animation: 8s intro-close ease both;
+}
+
+#hide.an {
+    animation: 8s unhide ease forwards;
+}
+
+#convas.an {
+    animation: 8s introduce-body ease-out;
+}
+
+
+@keyframes introduce {
+    0% {
+        opacity: 1;
+        color: black;
+        top: 0;
+        transform: translateY(-50%);
+    }
+    25% {
+        opacity: 1;
+        color: #dedede;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    33% {
+        opacity: 1;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    45% {
+        opacity: 1;
+        top: 40%;
+        transform: translateY(-50%);
+    }
+    75%{
+        opacity: 1;
+        top: 40%;
+        transform: translateY(-50%);
+    }
+    100% {
+        opacity: 0;
+        display: none;
+        color: #dedede;
+        display: none;
+        top: 90%;
+    }
+}
+
+@keyframes introduce2 {
+    0% {
+        opacity: 0;
+        top: 41%;
+        left:38%;
+    }
+    50% {
+        opacity: 0;
+        top: 41%;
+        left:38%;
+    }
+    75% {
+        opacity: 1;
+        top: 41%;
+        left:38%;
+    }
+    100% {
+        opacity: 0;
+        top:90%;
+        left:38%;
+    }
+}
+
+@keyframes introduce-body {
+    0% {
+        background-color: #dedede;
+    }
+    25% {
+        background-color: #212121;
+    }
+    99% {
+        background-color: #212121;
+    }
+    100% {
+        background-color: #dedede;
+    }
+}
+
+@keyframes unhide {
+    0% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
